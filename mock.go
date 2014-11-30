@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 type presenter interface {
 	method() interface{}
 }
@@ -38,8 +34,8 @@ var mock = func() interface{} {
 func main() {
 	var p presenter
 	p = new(actor)
-	fmt.Printf("%v",p.method())
+	p.method()
 
 	p = mocking(mock,p)
-	fmt.Printf("%v",p.method())
+	p.method()
 }
